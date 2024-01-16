@@ -10,8 +10,6 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(state.all_users);
 
-  console.log(searchText);
-  console.log(filteredUsers);
   useEffect(() => {
     setFilteredUsers(
       searchText.length > 0 || state.show_user_modal
