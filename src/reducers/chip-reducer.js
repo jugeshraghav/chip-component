@@ -10,6 +10,9 @@ export const chip_reducer = (state, action) => {
     case "ADD_USER_TO_SELECTED_USER_LIST":
       return {
         ...state,
+        all_users: state.all_users.filter(
+          ({ _id }) => _id !== action.payload._id
+        ),
         selected_users: [...state.selected_users, action.payload],
       };
 
@@ -19,6 +22,7 @@ export const chip_reducer = (state, action) => {
         selected_users: state.selected_users.filter(
           ({ _id }) => _id !== action.payload._id
         ),
+        all_users: [...state.all_users, action.payload],
       };
 
     default:

@@ -5,7 +5,7 @@ export const ChipContainer = ({ filtered_users }) => {
   const { dispatch } = useContext(ChipContext);
 
   return filtered_users.length > 0 ? (
-    <div className="w-96 h-96 overflow-auto    mx-auto flex  shadow-lg flex-col gap-4  items-center">
+    <div className="w-96 h-96 overflow-auto mx-auto flex  shadow-lg flex-col gap-4  items-center">
       {filtered_users.map(({ _id, fullname, image, email }) => (
         <div
           key={_id}
@@ -17,7 +17,7 @@ export const ChipContainer = ({ filtered_users }) => {
             })
           }
         >
-          <img src={image} className="w-12 h-12 rounded-full" />
+          <img src={image} alt="profile" className="w-12 h-12 rounded-full" />
           <div>
             <p className="font-bold text-left">{fullname}</p>
             <p className="text-gray-800 text-left">{email}</p>

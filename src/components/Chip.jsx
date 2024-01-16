@@ -8,7 +8,7 @@ export const Chip = ({ user }) => {
       key={user._id}
       className="w-max flex gap-2 items-center   rounded-full bg-gray-200"
     >
-      <img src={user.image} className="w-10 h-10 rounded-full" />
+      <img src={user.image} alt="profile" className="w-10 h-10 rounded-full" />
 
       <p>{user.fullname}</p>
       <p
