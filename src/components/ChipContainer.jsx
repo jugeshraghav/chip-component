@@ -10,12 +10,13 @@ export const ChipContainer = ({ filtered_users }) => {
         <div
           key={_id}
           className="w-72 flex gap-2 items-start cursor-pointer  p-2 rounded-lg hover:border-2 border-purple-500"
-          onClick={() =>
+          onClick={() => {
             dispatch({
               type: "ADD_USER_TO_SELECTED_USER_LIST",
               payload: { _id, fullname, email, image },
-            })
-          }
+            });
+            dispatch({ type: "HIDE_USER_MODAL" });
+          }}
         >
           <img src={image} alt="profile" className="w-12 h-12 rounded-full" />
           <div>

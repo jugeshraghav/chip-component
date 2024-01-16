@@ -3,6 +3,7 @@ import { users } from "../data/users";
 export const initial_state = {
   all_users: users,
   selected_users: [],
+  show_user_modal: false,
 };
 
 export const chip_reducer = (state, action) => {
@@ -24,6 +25,11 @@ export const chip_reducer = (state, action) => {
         ),
         all_users: [...state.all_users, action.payload],
       };
+
+    case "SHOW_USER_MODAL":
+      return { ...state, show_user_modal: true };
+    case "HIDE_USER_MODAL":
+      return { ...state, show_user_modal: false };
 
     default:
       return state;
